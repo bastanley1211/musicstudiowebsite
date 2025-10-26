@@ -3,7 +3,7 @@ body {
         }
 
         .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #ea9066;
         }
 
         .navbar-brand {
@@ -19,7 +19,7 @@ body {
         }
 
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #ea9066;
             color: white;
             padding: 4rem 2rem;
             text-align: center;
@@ -52,25 +52,25 @@ body {
         }
 
         .card-title {
-            color: #667eea;
+            color: #b97251;
         }
 
         .btn-primary {
-            background: #667eea;
-            border-color: #667eea;
+            background: #b97251;
+            border-color: #8d5942;
         }
 
         .btn-primary:hover {
-            background: #764ba2;
-            border-color: #764ba2;
+            background: #8d5942;
+            border-color: #8d5942;
         }
 
         .schedule-item {
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #8d5942;
         }
 
         .schedule-date {
-            color: #764ba2;
+            color: #5c4840;
             font-weight: bold;
         }
 
