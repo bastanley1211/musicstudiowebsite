@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B. Stanley Music Studio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .service-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: #667eea;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            border-color: #667eea;
+        }
+
+        .btn-primary:hover {
+            background: #764ba2;
+            border-color: #764ba2;
+        }
+
+        .schedule-item {
+            border-left: 4px solid #667eea;
+        }
+
+        .schedule-date {
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                <img src="https://i.imgur.com/SKdqHUD.png" alt="B. Stanley Music Studio Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('choir')">Children's Choir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('lessons')">Private Lessons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('performances')">Performances</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('contact')">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <div class="container">
+                <h1>Welcome to B. Stanley Music Studio</h1>
+                <p class="lead">Inspiring young musicians through personalized instruction and joyful ensemble singing</p>
+            </div>
+        </div>
+        
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card service-card shadow">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-users"></i> Children's Choir</h3>
+                            <p class="card-text">A fun and engaging choir program for children ages 6-14. Build confidence, learn musicality, and make friends through the joy of singing together.</p>
+                            <p><strong>When:</strong> Tuesdays 4:30-5:30 PM</p>
+                            <a href="#" onclick="showPage('choir')" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card service-card shadow">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-user"></i> Private Lessons</h3>
+                            <p class="card-text">One-on-one instruction in piano, voice, and music theory. Personalized curriculum designed to meet each student's goals and interests.</p>
+                            <p><strong>Ages:</strong> 5 and up</p>
+                            <a href="#" onclick="showPage('lessons')" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card service-card shadow">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-music"></i> Performances</h3>
+                            <p class="card-text">Experience the artistry of classical and contemporary music. Join us for recitals, concerts, and special community events throughout the year.</p>
+                            <p><strong>Next Event:</strong> Winter Recital</p>
+                            <a href="#" onclick="showPage('performances')" class="btn btn-primary">View Schedule</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Children's Choir Page -->
+    <div id="choir" class="page">
+        <div class="hero">
+            <div class="container">
+                <h1>Children's Choir</h1>
+                <p class="lead">Where young voices find harmony</p>
+            </div>
+        </div>
+        
+        <div class="container my-5">
+            <h2>About the Choir</h2>
+            <p class="lead">Our children's choir program provides a nurturing environment where young singers develop vocal technique, musicianship, and confidence. Students learn to read music, sing in harmony, and perform as an ensemble.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h3>Program Details</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Ages:</strong> 6-14 years old</li>
+                        <li class="list-group-item"><strong>Schedule:</strong> Tuesdays, 4:30-5:30 PM</li>
+                        <li class="list-group-item"><strong>Location:</strong> Studio at 123 Harmony Lane</li>
+                        <li class="list-group-item"><strong>Tuition:</strong> $120/month</li>
+                        <li class="list-group-item"><strong>Performance Opportunities:</strong> Winter and Spring concerts</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-info">
+                        <h4 class="alert-heading"><i class="fas fa-info-circle"></i> What to Expect</h4>
+                        <p>Students will learn proper vocal technique, music reading skills, and ensemble singing. No prior experience necessary!</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-5 mb-3">Sign Up for Children's Choir</h3>
+            <iframe data-tally-src="https://tally.so/embed/wdLYkd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="832" frameborder="0" marginheight="0" marginwidth="0" title="Children's Choir and/Music Class Sign Ups"></iframe>
+        </div>
+    </div>
+
+    <!-- Private Lessons Page -->
+    <div id="lessons" class="page">
+        <div class="hero">
+            <div class="container">
+                <h1>Private Lessons</h1>
+                <p class="lead">Personalized instruction for every student</p>
+            </div>
+        </div>
+        
+        <div class="container my-5">
+            <h2>Individual Instruction</h2>
+            <p class="lead">Private lessons offer focused, one-on-one instruction tailored to each student's unique goals and learning style. Whether preparing for auditions, developing technical skills, or exploring music for enjoyment, students receive personalized guidance.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-piano"></i> Piano</h4>
+                            <p class="card-text">Classical and contemporary styles, all levels</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-microphone"></i> Voice</h4>
+                            <p class="card-text">Proper technique, repertoire building, performance preparation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-book"></i> Music Theory</h4>
+                            <p class="card-text">Fundamentals through advanced harmony and analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mt-4">Lesson Details</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Duration:</strong> 30, 45, or 60-minute sessions</li>
+                <li class="list-group-item"><strong>Schedule:</strong> Flexible scheduling Monday-Saturday</li>
+                <li class="list-group-item"><strong>Tuition:</strong> $50-$100 per lesson (based on duration)</li>
+                <li class="list-group-item"><strong>Ages:</strong> 5 years and up, including adults</li>
+            </ul>
+
+            <h3 class="mt-5 mb-3">Request Private Lessons</h3>
+            <iframe data-tally-src="https://tally.so/embed/wdLYkd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="832" frameborder="0" marginheight="0" marginwidth="0" title="Children's Choir and/Music Class Sign Ups"></iframe>
+        </div>
+    </div>
+
+    <!-- Performances Page -->
+    <div id="performances" class="page">
+        <div class="hero">
+            <div class="container">
+                <h1>Performance Schedule</h1>
+                <p class="lead">Join us for upcoming concerts and recitals</p>
+            </div>
+        </div>
+        
+        <div class="container my-5">
+            <h2 class="mb-4">Upcoming Performances</h2>
+            
+            <div class="card mb-3 schedule-item">
+                <div class="card-body">
+                    <h3 class="card-title">Winter Student Recital</h3>
+                    <p class="schedule-date"><i class="far fa-calendar-alt"></i> Saturday, December 14, 2025 at 3:00 PM</p>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Community Arts Center, Main Hall</p>
+                    <p class="card-text">Students from the private lesson studio showcase their progress with solo performances. A wonderful opportunity for young musicians to share their achievements with family and friends.</p>
+                </div>
+            </div>
+
+            <div class="card mb-3 schedule-item">
+                <div class="card-body">
+                    <h3 class="card-title">Children's Choir Winter Concert</h3>
+                    <p class="schedule-date"><i class="far fa-calendar-alt"></i> Sunday, December 15, 2025 at 2:00 PM</p>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> First Presbyterian Church</p>
+                    <p class="card-text">The children's choir presents a festive program of seasonal favorites and new works. This joyful celebration of music and community is free and open to the public.</p>
+                </div>
+            </div>
+
+            <div class="card mb-3 schedule-item">
+                <div class="card-body">
+                    <h3 class="card-title">Faculty Recital: An Evening of Song</h3>
+                    <p class="schedule-date"><i class="far fa-calendar-alt"></i> Friday, January 24, 2026 at 7:30 PM</p>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Harmony Lane Studio</p>
+                    <p class="card-text">Sarah Chen performs an intimate program featuring art songs by Schubert, Fauré, and Barber, accompanied by pianist Michael Torres. Reception to follow.</p>
+                </div>
+            </div>
+
+            <div class="card mb-3 schedule-item">
+                <div class="card-body">
+                    <h3 class="card-title">Spring Student Recital</h3>
+                    <p class="schedule-date"><i class="far fa-calendar-alt"></i> Saturday, May 16, 2026 at 3:00 PM</p>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Community Arts Center, Main Hall</p>
+                    <p class="card-text">Our spring showcase celebrates another semester of musical growth and achievement. All students are invited to perform.</p>
+                </div>
+            </div>
+
+            <div class="card mb-3 schedule-item">
+                <div class="card-body">
+                    <h3 class="card-title">Children's Choir Spring Concert</h3>
+                    <p class="schedule-date"><i class="far fa-calendar-alt"></i> Sunday, May 17, 2026 at 2:00 PM</p>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Riverside Park Amphitheater</p>
+                    <p class="card-text">An outdoor celebration featuring the children's choir performing repertoire from throughout the year. Bring a blanket and enjoy music in the park!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p class="lead">We'd love to hear from you</p>
+            </div>
+        </div>
+        
+        <div class="container my-5">
+            <h2>Get in Touch</h2>
+            <p class="lead">Have questions about our programs? Interested in scheduling a trial lesson? Please reach out and we'll respond within 24 hours.</p>
+
+            <div class="card bg-light my-4">
+                <div class="card-body">
+                    <h3 class="card-title">Studio Information</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>123 Harmony Lane, Suite 200<br>Musicville, CA 90210</p>
+                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br>sarah@chenmusicstudio.com</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br>(555) 123-4567</p>
+                            <p><i class="far fa-clock"></i> <strong>Office Hours:</strong><br>Monday-Friday, 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="mb-3">Send a Message</h3>
+            <iframe data-tally-src="https://tally.so/embed/wdLYkd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="832" frameborder="0" marginheight="0" marginwidth="0" title="Children's Choir and/Music Class Sign Ups"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2025 B. Stanley Music Studio. All rights reserved.</p>
+            <p class="mb-0">Nurturing musical excellence, one student at a time.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    <script>
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageName).classList.add('active');
+            
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
